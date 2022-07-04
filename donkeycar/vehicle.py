@@ -52,7 +52,7 @@ class PartProfiler:
             row = [p.__class__.__name__,
                    "%.2f" % (max(arr) * 1000),
                    "%.2f" % (min(arr) * 1000),
-                   "%.2f" % (sum(arr) / len(arr) * 1000)]
+                   "%.2f" % (np.mean(arr) * 1000)]
             row += ["%.2f" % (np.percentile(arr, p) * 1000) for p in pctile]
             pt.add_row(row)
         logger.info('\n' + str(pt))
